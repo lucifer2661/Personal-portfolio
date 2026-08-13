@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import * as ReactConsoleEmulator from 'react-console-emulator'
 import MacWindow from './MacWindow'
-import './cli.scss'
+import './Cli.scss'
 
 function resolveComponent(mod) {
   let candidate = mod
