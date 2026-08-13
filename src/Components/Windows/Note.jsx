@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import React, { lazy, Suspense, useEffect, useState } from 'react'
 import MacWindow from './MacWindow'
- import './Note.scss'
+import './Note.scss'
 
+const Markdown = lazy(() => import('react-markdown'))
 
-const Note = ({onClose}) => {
+const Note = ({ onClose }) => {
   const [markdown, setMarkdown] = useState(null)
 
   useEffect(() => {
@@ -15,10 +14,14 @@ const Note = ({onClose}) => {
   }, [])
 
   return (
-    <MacWindow title="Note"onClose={onClose}>
+    <MacWindow title="Note" onClose={onClose}>
       <div className="note-window">
         {markdown ? (
-          <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
+          <Suspense fallback={<p className="loading">Loading…</p>}>
+            <Markdown>
+              {markdown}
+            </Markdown>
+          </Suspense>
         ) : (
           <p className="loading">Loading…</p>
         )}

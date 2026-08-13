@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { lazy, Suspense, useState } from 'react'
 import "./app.scss"
 import Dock from './Components/Dock'
 import Nav from './Components/Nav'
-import MacWindow from './Components/Windows/MacWindow'
-import Github from './Components/Windows/Github'
-import Note from './Components/Windows/Note'
-import Pdf from './Components/Windows/Pdf'
-import Spotify from './Components/Windows/Spotify'
-import Cli from './Components/Windows/Cli'
+
+const Github = lazy(() => import('./Components/Windows/Github'))
+const Note = lazy(() => import('./Components/Windows/Note'))
+const Pdf = lazy(() => import('./Components/Windows/Pdf'))
+const Spotify = lazy(() => import('./Components/Windows/Spotify'))
+const Cli = lazy(() => import('./Components/Windows/Cli'))
 
 const App = () => {
   const [windowState, setWindowState] = useState({
@@ -18,30 +18,45 @@ const App = () => {
     Cli: false,
   })
 
-return (
-  <main>
-    <Nav />
-    {/* Pass setWindowState down to Dock so clicking icons can toggle windows */}
-    <Dock windowState={windowState} setWindowState={setWindowState} />
+  const closeWindow = (window) => {
+    setWindowState((prev) => ({
+      ...prev,
+      [window]: false,
+    }))
+  }
 
-    {/* Only show windows when their state is true */}
-    {windowState.Github && (
-      <Github onClose={() => setWindowState((prev) => ({ ...prev, Github: false }))} />
-    )}
-    {windowState.Note && (
-      <Note onClose={() => setWindowState((prev) => ({ ...prev, Note: false }))} />
-    )}
-    {windowState.Pdf && (
-      <Pdf onClose={() => setWindowState((prev) => ({ ...prev, Pdf: false }))} />
-    )}
-    {windowState.Spotify && (
-      <Spotify onClose={() => setWindowState((prev) => ({ ...prev, Spotify: false }))} />
-    )}
-    {windowState.Cli && (
-      <Cli onClose={() => setWindowState((prev) => ({ ...prev, Cli: false }))} />
-    )}
-  </main>
-)
+  return (
+    <main>
+      <Nav />
+
+      <Dock
+        windowState={windowState}
+        setWindowState={setWindowState}
+      />
+
+      <Suspense fallback={null}>
+        {windowState.Github && (
+          <Github onClose={() => closeWindow("Github")} />
+        )}
+
+        {windowState.Note && (
+          <Note onClose={() => closeWindow("Note")} />
+        )}
+
+        {windowState.Pdf && (
+          <Pdf onClose={() => closeWindow("Pdf")} />
+        )}
+
+        {windowState.Spotify && (
+          <Spotify onClose={() => closeWindow("Spotify")} />
+        )}
+
+        {windowState.Cli && (
+          <Cli onClose={() => closeWindow("Cli")} />
+        )}
+      </Suspense>
+    </main>
+  )
 }
 
 export default App
