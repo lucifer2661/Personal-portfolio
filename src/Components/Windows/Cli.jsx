@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import MacWindow from './MacWindow'
-import './cli.scss'
+import './Cli.scss'
 
 const Cli = ({ onClose }) => {
   const lastLogin = new Date().toString().replace(/GMT.*/, '').trim()
