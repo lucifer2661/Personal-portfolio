@@ -1,0 +1,10 @@
+.spotifyWindow {
+  width: 100%;
+  display: flex;
+  
+  iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+  }
+}

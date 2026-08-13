@@ -1,0 +1,9 @@
+.Cli-Window {
+  height: 100%;
+  width: 100%;
+
+  // subtle scanline/CRT feel — optional, delete if you don't want it
+  .terminal {
+    background: #0a0a0a !important;
+  }
+}

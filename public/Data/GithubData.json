@@ -1,0 +1,43 @@
+{
+  "profile": {
+    "name": "Aditya",
+    "username": "lucifer2661",
+    "headline": "Full-Stack Developer | React · Node.js",
+    "github_url": "https://github.com/lucifer2661",
+    "linkedin_url": "https://linkedin.com/in/aditya-thakur-615b75194"
+  },
+  "stats": {
+    "public_repositories": 39,
+    "followers": 2,
+    "account_created_at": "2021-08-09"
+  },
+  "core_skills": ["React", "Node.js", "Express", "MongoDB", "PostgreSQL", "TypeScript"],
+  "top_projects": [
+    {
+      "name": "TeamSync",
+      "description": "Full-stack team management platform with custom-built auth (JWT), secure APIs, and a responsive UI.",
+      "github_url": "https://github.com/lucifer2661/TEAM-SYNC",
+      "live_url": "https://team-sync-gray-five.vercel.app",
+      "tech_stack": ["React", "Node.js", "Express", "MongoDB", "JWT"]
+    },
+    {
+      "name": "Incybyte Sweetshop",
+      "description": "TypeScript web application, deployed and live.",
+      "github_url": "https://github.com/lucifer2661/incybyte-sweetshop",
+      "live_url": "https://incybyte-sweetshop.vercel.app",
+      "tech_stack": ["TypeScript"]
+    },
+    {
+      "name": "Reels Functionality App",
+      "description": "App exploring how to implement reels-style short-video functionality.",
+      "github_url": "https://github.com/lucifer2661/reels-funtionality-app",
+      "live_url": "https://reels-funtionality-app.vercel.app",
+      "tech_stack": ["JavaScript"]
+    }
+  ],
+  "open_source": {
+    "project": "OpenSeaDragon",
+    "repo_url": "https://github.com/lucifer2661/openseadragon",
+    "status": "One PR merged; currently working on another"
+  }
+}

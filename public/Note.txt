@@ -1,0 +1,68 @@
+# 👋 Aditya Thakur
+
+*Full-Stack Developer — React · Node.js*
+
+> Building in public, one commit at a time.
+
+📍 Chandigarh, India · 🎓 B.E. CS, Chandigarh University — May 2026
+📫 adityathakur2661@gmail.com · [LinkedIn](https://linkedin.com/in/aditya-thakur-615b75194) · [GitHub](https://github.com/lucifer2661)
+
+---
+
+## 🧠 Core Stack
+
+`React`  `Node.js`  `Express`  `PostgreSQL`  `Prisma`  `MongoDB`  `C++ (DSA)`
+
+---
+
+## 💼 Experience
+
+**Medoc Health** · Backend Developer Intern *(Remote)*
+Architected RESTful APIs and backend microservices with Spring Boot; integrated event-driven architecture and optimized SQL queries for reliability and throughput.
+
+---
+
+## 🚀 Featured Projects
+
+**TeamSync** — *AI-powered team management SaaS*
+Real-time collaborative workspace with socket-driven messaging and task tracking. Custom-built backend (Express, MongoDB, JWT) after the original API dependency was dropped. → [github.com/lucifer2661/TEAM-SYNC](https://github.com/lucifer2661/TEAM-SYNC)
+
+**macOS Interface Emulator**
+A web-based desktop environment mimicking core macOS UI — dock, windows, terminal — with an AI chat feature planned so recruiters can ask questions directly. *(this note lives inside it)*
+
+**Sandbox Microservices IDE**
+Live integrated IDE with containerized code execution, an AI preview feature, and a file explorer.
+
+**AI Text Summarizer**
+NLP-based pipeline that distills documents into key insights via automated text processing.
+
+---
+
+## 🌱 Open Source
+
+**OpenSeaDragon** *(deep-zoom image viewer library)*
+✅ PR #2944 merged — `setVisible()` method for Navigator
+🔄 Actively working through follow-up issues from the maintainer
+
+---
+
+## 📈 Currently Building Toward
+
+- [x] Frontend fundamentals — JS & React
+- [x] TeamSync shipped and deployed
+- [ ] Node.js backend depth
+- [ ] 300+ LeetCode solved · strong DP & graphs
+- [ ] Docker & Kubernetes
+- [ ] 3 solid open-source contributions to OpenSeaDragon
+
+---
+
+## 🏆 Certifications & Recognition
+
+- Meta Professional Certificate — Coursera
+- JPMorgan Chase & Co. Software Engineering Virtual Experience
+- 3rd Place, Chandigarh University Hackathon (50+ teams, 24-hour sprint)
+
+---
+
+*Last updated from the terminal.* 🖥️

@@ -1,0 +1,113 @@
+.dock {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 8px 10px;
+
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  z-index: 1000;
+
+  .icon {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    // Background Container for Icons
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15); // Fallback background color
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    // Individual App Background Colors (Customize or target via HTML classes)
+   // Individual App Background Colors — macOS-style vivid gradients
+    &.github    { background: linear-gradient(160deg, #4a4a4a, #0d1117); }
+    &.note      { background: linear-gradient(160deg, #ffe580, #ffb300); }
+    &.calendar  { background: linear-gradient(160deg, #ffffff 0%, #ffffff 38%, #ff3b30 38%, #ff2d20 100%); }
+    &.cli       { background: linear-gradient(160deg, #2b2b2b, #050505); border: 1px solid rgba(255, 255, 255, 0.1); }
+    &.link      { background: linear-gradient(160deg, #5ac8fa, #007aff); }
+    &.spotify   { background: radial-gradient(circle at 30% 25%, #3be477, #1db954 60%, #169c46 100%); }
+    &.pdf       { background: linear-gradient(160deg, #ff5f52, #d32f2f); }
+    &.mail      { background: linear-gradient(160deg, #6fc3ff, #0a84ff); }
+
+    // grow upward from the dock, like macOS
+    transform-origin: bottom center;
+    will-change: transform;
+
+    // the "sleek" part: spring-like easing smooths every rAF update + return
+    transition: transform 0.18s cubic-bezier(0.25, 1.4, 0.5, 1), background-color 0.2s ease;
+
+    img {
+      width: 70%; // Scaled down slightly so icon padding looks natural inside colored container
+      height: 70%;
+      object-fit: contain;
+      pointer-events: none;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    // Tooltip label (macOS shows the app name on hover)
+    .tooltip {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%) translateY(6px) scale(0.9);
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      white-space: nowrap;
+      background: rgba(35, 35, 35, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 8px;
+        height: 8px;
+        background: inherit;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    &:hover .tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+
+    // Optional launch bounce (CSS animation overrides inline transform while active)
+    &.bounce {
+      animation: dock-bounce 0.6s ease;
+    }
+  }
+}
+
+@keyframes dock-bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-26px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-11px); }
+  100% { transform: translateY(0); }
+}
